@@ -68,10 +68,10 @@ public class SecurityConfig {
         // Permitimos los métodos HTTP estándar
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 
-        // Permitimos todas las cabeceras (necesario para enviar el Token en 'Authorization')
+        // Permitimos todas las cabeceras (necesario para enviar el Token en Authorization)
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type", "Cache-Control"));
 
-        // Permitimos el envío de credenciales (cookies, auth headers)
+        // Permitimos el envío de credenciales
         configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

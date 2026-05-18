@@ -44,7 +44,7 @@ public class AppointmentService {
     private BusinessShiftRepository businessShiftRepository;
 
     /**
-     * Registra una nueva cita calculando automáticamente la duración y validando disponibilidad. Si es fin de semana
+     * Registra una nueva cita calculando automáticamente la duración y validando disponibilidad.
      * @param dto Objeto con los datos de la reserva (Fecha, Hora Inicio, IDs de relaciones).
      * @throws SlotAlreadyOccupiedException Si el horario ya está comprometido para ese empleado.
      */
@@ -64,11 +64,7 @@ public class AppointmentService {
             throw new DateNotValidException("No se pueden programar citas en fechas pasadas.");
         }
 
-        // Validar que no sea Fin de Semana
-        DayOfWeek day = dto.getDate().getDayOfWeek();
-        if (day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY) {
-            throw new DateNotValidException("No abrimos los fines de semana. Por favor, elige un día de lunes a viernes.");
-        }
+
 
         //  Construcción del objeto (Mapeo)
         Appointment appointment = new Appointment();
