@@ -49,7 +49,7 @@ public class InvoicesService {
         invoiceEntity.setInvoiceNumber("INV-" + System.currentTimeMillis());
         //snapshots
         invoiceEntity.setClientName(appointment.getUser().getName());
-        invoiceEntity.setEmployeeName(appointment.getUser().getName());
+        invoiceEntity.setEmployeeName(appointment.getEmployee().getName());
         invoiceEntity.setServiceName(appointment.getService().getName());
         invoiceEntity.setPrice(BigDecimal.valueOf(appointment.getService().getPrice()));
 
